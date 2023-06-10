@@ -19,7 +19,7 @@ final class TabBarController: UITabBarController {
             selectedImage: UIImage(systemName: "mic.fill")
         )
         
-        let bookMarkVC = BookMarkVC()
+        let bookMarkVC = UINavigationController(rootViewController: BookmarkListVC())
         bookMarkVC.tabBarItem = UITabBarItem(
             title: "즐겨찾기",
             image: UIImage(systemName: "star"),

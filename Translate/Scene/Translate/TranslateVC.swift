@@ -9,11 +9,6 @@ import UIKit
 import SnapKit
 import Combine
 
-enum buttonType {
-    case srouce
-    case target
-}
-
 final class TranslateVC: UIViewController {
     private let subject = CurrentValueSubject<String?, Never>(nil)
     private var cancelables = Set<AnyCancellable>()
@@ -72,12 +67,14 @@ final class TranslateVC: UIViewController {
     private lazy var bookmarkButton: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(systemName: "bookmark"), for: .normal)
+        button.addTarget(self, action: #selector(didTapBookmarkButton), for: .touchUpInside)
         return button
     }()
     
     private lazy var copyButton: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(systemName: "doc.on.doc"), for: .normal)
+        button.addTarget(self, action: #selector(didTapCopyButton), for: .touchUpInside)
         return button
     }()
     
@@ -101,6 +98,7 @@ final class TranslateVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        view.tintColor = .mainTintColor
         setupViews()
 //        bind()
     }
@@ -179,7 +177,9 @@ private extension TranslateVC {
                 self.sourceLabel.text = text
             }.store(in: &cancelables)
     }
-    
+}
+
+private extension TranslateVC {
     @objc func didTapSourceLabelBaseButton() {
         let vc = SourceTextVC()
 //        vc.subject = self.subject                   // 1. Combine을 사용하는 방법
@@ -196,7 +196,7 @@ private extension TranslateVC {
     }
     
     @objc func didTapSourceLanguageButton() {
-        didLanguageButton(type: .srouce)
+        didLanguageButton(type: .source)
     }
     
     @objc func didTapTargetLanguageButton() {
@@ -208,7 +208,7 @@ private extension TranslateVC {
         Language.allCases.forEach { language in
             let action = UIAlertAction(title: language.title, style: .default) { _ in
                 switch type {
-                case .srouce:
+                case .source:
                     self.sourceLanguage = language
                     self.sourceLanguageButton.setTitle(language.title, for: .normal)
                 case .target:
@@ -222,6 +222,27 @@ private extension TranslateVC {
         alertController.addAction(cancel)
         present(alertController, animated: true)
     }
+    
+    @objc func didTapBookmarkButton() {
+        guard let sourceText = sourceLabel.text,
+              let translatedText = resultLabel.text,
+              bookmarkButton.imageView?.image == UIImage(systemName: "bookmark") else { return }
+        bookmarkButton.setImage(UIImage(systemName: "bookmark.fill"), for: .normal)
+        
+        let currentBookmarks = UserDefaults.standard.bookmarks
+        let newBookmark = Bookmark(
+            sourceLanguage: sourceLanguage,
+            translatedLanguage: targetLanguage,
+            sourceText: sourceText,
+            translatedText: translatedText
+        )
+        UserDefaults.standard.bookmarks = [newBookmark] + currentBookmarks
+        print("Bookmark: \(UserDefaults.standard.bookmarks)")
+    }
+    
+    @objc func didTapCopyButton() {
+        UIPasteboard.general.string = resultLabel.text  // 클립보드 복사
+    }
 }
 
 extension TranslateVC: SourceTextVCDelegate {
@@ -229,5 +250,7 @@ extension TranslateVC: SourceTextVCDelegate {
         if sourceText.isEmpty { return }
         sourceLabel.textColor = .label
         sourceLabel.text = sourceText
+        
+        bookmarkButton.setImage(UIImage(systemName: "bookmark"), for: .normal)
     }
 }
