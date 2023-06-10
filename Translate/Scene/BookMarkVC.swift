@@ -11,7 +11,7 @@ import SnapKit
 final class BookMarkVC: UIViewController {
     
     override func viewDidLoad() {
-        super.viewDidLoad()
+        super.viewDidLoad()    
         
     }
 }

@@ -27,6 +27,7 @@ final class TabBarController: UITabBarController {
         )
         
         viewControllers = [translateVC, bookMarkVC]
+        tabBar.tintColor = UIColor.mainTintColor
     }
 }
 

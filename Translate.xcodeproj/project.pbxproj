@@ -16,6 +16,9 @@
 		335671092A31F1750028FA8B /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 335671082A31F1750028FA8B /* SnapKit */; };
 		3356710B2A31F9480028FA8B /* TranslateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3356710A2A31F9480028FA8B /* TranslateVC.swift */; };
 		3356710E2A31F9BF0028FA8B /* BookMarkVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3356710D2A31F9BF0028FA8B /* BookMarkVC.swift */; };
+		335671102A32EDC00028FA8B /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3356710F2A32EDC00028FA8B /* UIColor+.swift */; };
+		335671122A3328AC0028FA8B /* SourceTextVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335671112A3328AC0028FA8B /* SourceTextVC.swift */; };
+		336078DD2A34671500E846DB /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336078DC2A34671500E846DB /* Language.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +31,9 @@
 		335670FE2A31F1150028FA8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3356710A2A31F9480028FA8B /* TranslateVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateVC.swift; sourceTree = "<group>"; };
 		3356710D2A31F9BF0028FA8B /* BookMarkVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookMarkVC.swift; sourceTree = "<group>"; };
+		3356710F2A32EDC00028FA8B /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
+		335671112A3328AC0028FA8B /* SourceTextVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceTextVC.swift; sourceTree = "<group>"; };
+		336078DC2A34671500E846DB /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +70,7 @@
 			children = (
 				335670F02A31F1140028FA8B /* AppDelegate.swift */,
 				335670F22A31F1140028FA8B /* SceneDelegate.swift */,
+				336078DC2A34671500E846DB /* Language.swift */,
 				3356710C2A31F9710028FA8B /* Scene */,
 				335670F92A31F1150028FA8B /* Assets.xcassets */,
 				335670FB2A31F1150028FA8B /* LaunchScreen.storyboard */,
@@ -75,11 +82,21 @@
 		3356710C2A31F9710028FA8B /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				3356710F2A32EDC00028FA8B /* UIColor+.swift */,
 				335670F42A31F1140028FA8B /* TabBarController.swift */,
-				3356710A2A31F9480028FA8B /* TranslateVC.swift */,
 				3356710D2A31F9BF0028FA8B /* BookMarkVC.swift */,
+				335671132A332AAB0028FA8B /* Translate */,
 			);
 			path = Scene;
+			sourceTree = "<group>";
+		};
+		335671132A332AAB0028FA8B /* Translate */ = {
+			isa = PBXGroup;
+			children = (
+				3356710A2A31F9480028FA8B /* TranslateVC.swift */,
+				335671112A3328AC0028FA8B /* SourceTextVC.swift */,
+			);
+			path = Translate;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -161,10 +178,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				335670F52A31F1140028FA8B /* TabBarController.swift in Sources */,
+				335671122A3328AC0028FA8B /* SourceTextVC.swift in Sources */,
 				335670F12A31F1140028FA8B /* AppDelegate.swift in Sources */,
 				335670F32A31F1140028FA8B /* SceneDelegate.swift in Sources */,
 				3356710E2A31F9BF0028FA8B /* BookMarkVC.swift in Sources */,
+				336078DD2A34671500E846DB /* Language.swift in Sources */,
 				3356710B2A31F9480028FA8B /* TranslateVC.swift in Sources */,
+				335671102A32EDC00028FA8B /* UIColor+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
