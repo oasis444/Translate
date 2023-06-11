@@ -24,8 +24,8 @@ struct TranslatorManager {
         )
         
         let headers: HTTPHeaders = [
-            "X-Naver-Client-Id": Data.id,
-            "X-Naver-Client-Secret": Data.pw
+            "X-Naver-Client-Id": Info.id,
+            "X-Naver-Client-Secret": Info.pw
         ]
         
         AF.request(url, method: .post, parameters: requestModel, headers: headers)

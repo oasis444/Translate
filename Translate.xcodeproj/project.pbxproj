@@ -27,7 +27,7 @@
 		336EDAE22A35C6B3001C31DA /* TranslateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336EDAE12A35C6B3001C31DA /* TranslateRequest.swift */; };
 		336EDAE42A361403001C31DA /* TranslateResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336EDAE32A361403001C31DA /* TranslateResponse.swift */; };
 		336EDAE62A3618C9001C31DA /* TranslatorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336EDAE52A3618C9001C31DA /* TranslatorManager.swift */; };
-		336EDAE92A36356D001C31DA /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336EDAE82A36356D001C31DA /* Data.swift */; };
+		336EDAEB2A36395A001C31DA /* Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336EDAEA2A36395A001C31DA /* Info.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,7 +51,7 @@
 		336EDAE12A35C6B3001C31DA /* TranslateRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateRequest.swift; sourceTree = "<group>"; };
 		336EDAE32A361403001C31DA /* TranslateResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateResponse.swift; sourceTree = "<group>"; };
 		336EDAE52A3618C9001C31DA /* TranslatorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslatorManager.swift; sourceTree = "<group>"; };
-		336EDAE82A36356D001C31DA /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		336EDAEA2A36395A001C31DA /* Info.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Info.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,7 +88,7 @@
 			children = (
 				335670F02A31F1140028FA8B /* AppDelegate.swift */,
 				335670F22A31F1140028FA8B /* SceneDelegate.swift */,
-				336EDAE82A36356D001C31DA /* Data.swift */,
+				336EDAEA2A36395A001C31DA /* Info.swift */,
 				336EDAE72A3618D5001C31DA /* Managers */,
 				336EDAE02A359D49001C31DA /* Models */,
 				336078E22A3488BA00E846DB /* Extension */,
@@ -250,9 +250,9 @@
 				335E97A12A34EA24007AC2E9 /* BookmarkTextStackView.swift in Sources */,
 				3356710B2A31F9480028FA8B /* TranslateVC.swift in Sources */,
 				335E979F2A34E6DA007AC2E9 /* BookmarkCell.swift in Sources */,
-				336EDAE92A36356D001C31DA /* Data.swift in Sources */,
 				335671102A32EDC00028FA8B /* UIColor+.swift in Sources */,
 				336078DF2A346B3300E846DB /* Bookmark.swift in Sources */,
+				336EDAEB2A36395A001C31DA /* Info.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
