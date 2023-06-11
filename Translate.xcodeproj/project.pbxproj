@@ -18,12 +18,16 @@
 		335671102A32EDC00028FA8B /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3356710F2A32EDC00028FA8B /* UIColor+.swift */; };
 		335671122A3328AC0028FA8B /* SourceTextVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335671112A3328AC0028FA8B /* SourceTextVC.swift */; };
 		335E979F2A34E6DA007AC2E9 /* BookmarkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335E979E2A34E6DA007AC2E9 /* BookmarkCell.swift */; };
-		335E97A12A34EA24007AC2E9 /* BookmarkTextStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335E97A02A34EA24007AC2E9 /* BookmarkTextStack.swift */; };
+		335E97A12A34EA24007AC2E9 /* BookmarkTextStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335E97A02A34EA24007AC2E9 /* BookmarkTextStackView.swift */; };
 		335E97A32A34ECBF007AC2E9 /* Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335E97A22A34ECBF007AC2E9 /* Type.swift */; };
 		336078DD2A34671500E846DB /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336078DC2A34671500E846DB /* Language.swift */; };
 		336078DF2A346B3300E846DB /* Bookmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336078DE2A346B3300E846DB /* Bookmark.swift */; };
 		336078E12A3488A000E846DB /* UserDefaults+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336078E02A3488A000E846DB /* UserDefaults+.swift */; };
 		336078E42A348E6D00E846DB /* BookmarkListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336078E32A348E6D00E846DB /* BookmarkListVC.swift */; };
+		336EDAE22A35C6B3001C31DA /* TranslateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336EDAE12A35C6B3001C31DA /* TranslateRequest.swift */; };
+		336EDAE42A361403001C31DA /* TranslateResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336EDAE32A361403001C31DA /* TranslateResponse.swift */; };
+		336EDAE62A3618C9001C31DA /* TranslatorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336EDAE52A3618C9001C31DA /* TranslatorManager.swift */; };
+		336EDAE92A36356D001C31DA /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336EDAE82A36356D001C31DA /* Data.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,12 +42,16 @@
 		3356710F2A32EDC00028FA8B /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 		335671112A3328AC0028FA8B /* SourceTextVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceTextVC.swift; sourceTree = "<group>"; };
 		335E979E2A34E6DA007AC2E9 /* BookmarkCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkCell.swift; sourceTree = "<group>"; };
-		335E97A02A34EA24007AC2E9 /* BookmarkTextStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkTextStack.swift; sourceTree = "<group>"; };
+		335E97A02A34EA24007AC2E9 /* BookmarkTextStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkTextStackView.swift; sourceTree = "<group>"; };
 		335E97A22A34ECBF007AC2E9 /* Type.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Type.swift; sourceTree = "<group>"; };
 		336078DC2A34671500E846DB /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
 		336078DE2A346B3300E846DB /* Bookmark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bookmark.swift; sourceTree = "<group>"; };
 		336078E02A3488A000E846DB /* UserDefaults+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+.swift"; sourceTree = "<group>"; };
 		336078E32A348E6D00E846DB /* BookmarkListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkListVC.swift; sourceTree = "<group>"; };
+		336EDAE12A35C6B3001C31DA /* TranslateRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateRequest.swift; sourceTree = "<group>"; };
+		336EDAE32A361403001C31DA /* TranslateResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateResponse.swift; sourceTree = "<group>"; };
+		336EDAE52A3618C9001C31DA /* TranslatorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslatorManager.swift; sourceTree = "<group>"; };
+		336EDAE82A36356D001C31DA /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,9 +88,9 @@
 			children = (
 				335670F02A31F1140028FA8B /* AppDelegate.swift */,
 				335670F22A31F1140028FA8B /* SceneDelegate.swift */,
-				336078DC2A34671500E846DB /* Language.swift */,
-				336078DE2A346B3300E846DB /* Bookmark.swift */,
-				335E97A22A34ECBF007AC2E9 /* Type.swift */,
+				336EDAE82A36356D001C31DA /* Data.swift */,
+				336EDAE72A3618D5001C31DA /* Managers */,
+				336EDAE02A359D49001C31DA /* Models */,
 				336078E22A3488BA00E846DB /* Extension */,
 				3356710C2A31F9710028FA8B /* Scene */,
 				335670F92A31F1150028FA8B /* Assets.xcassets */,
@@ -116,7 +124,7 @@
 			children = (
 				336078E32A348E6D00E846DB /* BookmarkListVC.swift */,
 				335E979E2A34E6DA007AC2E9 /* BookmarkCell.swift */,
-				335E97A02A34EA24007AC2E9 /* BookmarkTextStack.swift */,
+				335E97A02A34EA24007AC2E9 /* BookmarkTextStackView.swift */,
 			);
 			path = Bookmark;
 			sourceTree = "<group>";
@@ -128,6 +136,26 @@
 				336078E02A3488A000E846DB /* UserDefaults+.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		336EDAE02A359D49001C31DA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				336078DC2A34671500E846DB /* Language.swift */,
+				336078DE2A346B3300E846DB /* Bookmark.swift */,
+				335E97A22A34ECBF007AC2E9 /* Type.swift */,
+				336EDAE12A35C6B3001C31DA /* TranslateRequest.swift */,
+				336EDAE32A361403001C31DA /* TranslateResponse.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		336EDAE72A3618D5001C31DA /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				336EDAE52A3618C9001C31DA /* TranslatorManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -213,12 +241,16 @@
 				336078E12A3488A000E846DB /* UserDefaults+.swift in Sources */,
 				335670F12A31F1140028FA8B /* AppDelegate.swift in Sources */,
 				335670F32A31F1140028FA8B /* SceneDelegate.swift in Sources */,
+				336EDAE42A361403001C31DA /* TranslateResponse.swift in Sources */,
 				336078DD2A34671500E846DB /* Language.swift in Sources */,
+				336EDAE62A3618C9001C31DA /* TranslatorManager.swift in Sources */,
 				336078E42A348E6D00E846DB /* BookmarkListVC.swift in Sources */,
 				335E97A32A34ECBF007AC2E9 /* Type.swift in Sources */,
-				335E97A12A34EA24007AC2E9 /* BookmarkTextStack.swift in Sources */,
+				336EDAE22A35C6B3001C31DA /* TranslateRequest.swift in Sources */,
+				335E97A12A34EA24007AC2E9 /* BookmarkTextStackView.swift in Sources */,
 				3356710B2A31F9480028FA8B /* TranslateVC.swift in Sources */,
 				335E979F2A34E6DA007AC2E9 /* BookmarkCell.swift in Sources */,
+				336EDAE92A36356D001C31DA /* Data.swift in Sources */,
 				335671102A32EDC00028FA8B /* UIColor+.swift in Sources */,
 				336078DF2A346B3300E846DB /* Bookmark.swift in Sources */,
 			);

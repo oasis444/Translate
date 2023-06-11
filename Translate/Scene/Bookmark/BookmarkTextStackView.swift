@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-final class BookmarkTextStack: UIStackView {
+final class BookmarkTextStackView: UIStackView {
     private let type: buttonType
     private let language: Language
     private let text: String
@@ -17,6 +17,7 @@ final class BookmarkTextStack: UIStackView {
         let label = UILabel()
         label.textColor = type.color
         label.font = .systemFont(ofSize: 13, weight: .medium)
+        label.text = language.title
         return label
     }()
     
@@ -24,6 +25,8 @@ final class BookmarkTextStack: UIStackView {
         let label = UILabel()
         label.textColor = type.color
         label.font = .systemFont(ofSize: 16, weight: .bold)
+        label.text = text
+        label.numberOfLines = 0
         return label
     }()
     
@@ -32,8 +35,8 @@ final class BookmarkTextStack: UIStackView {
         self.text = text
         self.type = type
         
-//        super.init()
         super.init(frame: .zero)
+        configure()
     }
     
     required init(coder: NSCoder) {

@@ -101,6 +101,10 @@ final class TranslateVC: UIViewController {
         view.tintColor = .mainTintColor
         setupViews()
 //        bind()
+        
+        TranslatorManager().translate(from: "안녕하세요") { result in
+            print("-----> result: \(result)")
+        }
     }
 }
 

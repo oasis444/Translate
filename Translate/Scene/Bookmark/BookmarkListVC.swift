@@ -36,6 +36,7 @@ final class BookmarkListVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         bookmarks = UserDefaults.standard.bookmarks
+        collectionView.reloadData()
     }
 }
 
@@ -49,7 +50,8 @@ extension BookmarkListVC: UICollectionViewDataSource, UICollectionViewDelegate {
             withReuseIdentifier: BookmarkCell.identifier,
             for: indexPath
         ) as? BookmarkCell else { return UICollectionViewCell() }
-        cell.configure()
+        let bookmark = bookmarks[indexPath.item]
+        cell.configure(from: bookmark)
         return cell
     }
 }
