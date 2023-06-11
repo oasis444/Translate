@@ -8,6 +8,6 @@
 import Foundation
 
 struct Data {
-    static let id = "re test"
-    static let pw = "re testing"
+    static let id = "git ignore"
+    static let pw = "git ignore 적용"
 }
