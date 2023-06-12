@@ -12,12 +12,11 @@ import Combine
 final class TranslateVC: UIViewController {
     private let subject = CurrentValueSubject<String?, Never>(nil)
     private var cancelables = Set<AnyCancellable>()
-    private var sourceLanguage: Language = .ko
-    private var targetLanguage: Language = .en
+    private var translateManager = TranslatorManager()
     
     private lazy var sourceLanguageButton: UIButton = {
         let button = UIButton()
-        button.setTitle(sourceLanguage.title, for: .normal)
+        button.setTitle(translateManager.sourceLanguage.title, for: .normal)
         button.titleLabel?.font = .systemFont(ofSize: 15, weight: .semibold)
         button.setTitleColor(.label, for: .normal)
         button.backgroundColor = .systemBackground
@@ -28,7 +27,7 @@ final class TranslateVC: UIViewController {
     
     private lazy var targetLanguageButton: UIButton = {
         let button = UIButton()
-        button.setTitle(targetLanguage.title, for: .normal)
+        button.setTitle(translateManager.targetLanguage.title, for: .normal)
         button.titleLabel?.font = .systemFont(ofSize: 15, weight: .semibold)
         button.setTitleColor(.label, for: .normal)
         button.backgroundColor = .systemBackground
@@ -59,7 +58,6 @@ final class TranslateVC: UIViewController {
         let label = UILabel()
         label.font = .systemFont(ofSize: 23, weight: .bold)
         label.textColor = UIColor.mainTintColor
-        label.text = "Hello Swift"
         label.numberOfLines = 0
         return label
     }()
@@ -88,7 +86,7 @@ final class TranslateVC: UIViewController {
     
     private lazy var sourceLabel: UILabel = {
         let label = UILabel()
-        label.text = "텍스트 입력"
+        label.text = NSLocalizedString("Enter_text", comment: "텍스트 입력")
         label.textColor = .tertiaryLabel // TODO: 입력값 추가되면 색상 변경
         label.numberOfLines = 0
         label.font = .systemFont(ofSize: 23, weight: .semibold)
@@ -101,10 +99,6 @@ final class TranslateVC: UIViewController {
         view.tintColor = .mainTintColor
         setupViews()
 //        bind()
-        
-        TranslatorManager().translate(from: "안녕하세요") { result in
-            print("-----> result: \(result)")
-        }
     }
 }
 
@@ -213,16 +207,16 @@ private extension TranslateVC {
             let action = UIAlertAction(title: language.title, style: .default) { _ in
                 switch type {
                 case .source:
-                    self.sourceLanguage = language
+                    self.translateManager.sourceLanguage = language
                     self.sourceLanguageButton.setTitle(language.title, for: .normal)
                 case .target:
-                    self.targetLanguage = language
+                    self.translateManager.targetLanguage = language
                     self.targetLanguageButton.setTitle(language.title, for: .normal)
                 }
             }
             alertController.addAction(action)
         }
-        let cancel = UIAlertAction(title: "취소", style: .cancel)
+        let cancel = UIAlertAction(title: NSLocalizedString("Cancel", comment: "취소하기"), style: .cancel)
         alertController.addAction(cancel)
         present(alertController, animated: true)
     }
@@ -235,8 +229,8 @@ private extension TranslateVC {
         
         let currentBookmarks = UserDefaults.standard.bookmarks
         let newBookmark = Bookmark(
-            sourceLanguage: sourceLanguage,
-            translatedLanguage: targetLanguage,
+            sourceLanguage: translateManager.sourceLanguage,
+            translatedLanguage: translateManager.targetLanguage,
             sourceText: sourceText,
             translatedText: translatedText
         )
@@ -254,6 +248,11 @@ extension TranslateVC: SourceTextVCDelegate {
         if sourceText.isEmpty { return }
         sourceLabel.textColor = .label
         sourceLabel.text = sourceText
+        
+        translateManager.translate(from: sourceText) { [weak self] translatedText in
+            guard let self = self else { return }
+            self.resultLabel.text = translatedText
+        }
         
         bookmarkButton.setImage(UIImage(systemName: "bookmark"), for: .normal)
     }

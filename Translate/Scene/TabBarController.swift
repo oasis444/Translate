@@ -14,14 +14,14 @@ final class TabBarController: UITabBarController {
         
         let translateVC = TranslateVC()
         translateVC.tabBarItem = UITabBarItem(
-            title: "번역",
+            title: NSLocalizedString("Translate", comment: "번역"),
             image: UIImage(systemName: "mic"),
             selectedImage: UIImage(systemName: "mic.fill")
         )
         
         let bookMarkVC = UINavigationController(rootViewController: BookmarkListVC())
         bookMarkVC.tabBarItem = UITabBarItem(
-            title: "즐겨찾기",
+            title: NSLocalizedString("Bookmark", comment: "즐겨찾기"),
             image: UIImage(systemName: "star"),
             selectedImage: UIImage(systemName: "star.fill")
         )

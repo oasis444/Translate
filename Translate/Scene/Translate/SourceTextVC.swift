@@ -15,7 +15,7 @@ protocol SourceTextVCDelegate: AnyObject {
 
 final class SourceTextVC: UIViewController {
     var subject: CurrentValueSubject<String?, Never>?
-    private let placeholderText = "텍스트 입력"
+    private let placeholderText = NSLocalizedString("Enter_text", comment: "텍스트 입력")
     var textData: ((String?) -> Void)?
     weak var delegate: SourceTextVCDelegate?
     
